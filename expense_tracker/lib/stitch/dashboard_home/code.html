@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-content": "#ffffff",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#182430",
+                        "success": "#10b981",
+                        "danger": "#ef4444",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scrolling if needed */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Chart bar animation simulation */
+        .bar-height {
+            transition: height 1s ease-out;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display antialiased min-h-screen flex flex-col relative overflow-hidden">
+<!-- Status Bar Area (iOS Safe Area simulation) -->
+<div class="h-12 w-full bg-background-light dark:bg-background-dark shrink-0"></div>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto px-5 pb-24 hide-scrollbar">
+<!-- App Bar -->
+<header class="flex items-center justify-between mb-6 pt-2">
+<h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Dashboard</h1>
+<div class="relative group">
+<button class="flex items-center space-x-2 bg-white dark:bg-surface-dark px-4 py-2 rounded-full shadow-sm border border-slate-200 dark:border-slate-700 active:scale-95 transition-transform">
+<span class="text-sm font-semibold text-slate-600 dark:text-slate-300">This Month</span>
+<span class="material-icons-round text-slate-400 text-lg">expand_more</span>
+</button>
+</div>
+</header>
+<!-- Summary Cards Section -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+<!-- Earnings Card -->
+<div class="bg-white dark:bg-surface-dark p-5 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 relative overflow-hidden group hover:shadow-md transition-all">
+<div class="absolute right-0 top-0 p-4 opacity-10">
+<span class="material-icons-round text-6xl text-success">account_balance_wallet</span>
+</div>
+<div class="flex items-center space-x-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-success/10 flex items-center justify-center text-success">
+<span class="material-icons-round">arrow_downward</span>
+</div>
+<span class="text-sm font-semibold text-slate-500 dark:text-slate-400">Total Income</span>
+</div>
+<div class="flex items-end justify-between">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">$1,200.00</h3>
+</div>
+<div class="mt-2 text-xs font-medium text-success flex items-center">
+<span class="material-icons-round text-sm mr-1">trending_up</span>
+                    +12% vs last month
+                </div>
+</div>
+<!-- Expenses Card -->
+<div class="bg-white dark:bg-surface-dark p-5 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 relative overflow-hidden group hover:shadow-md transition-all">
+<div class="absolute right-0 top-0 p-4 opacity-10">
+<span class="material-icons-round text-6xl text-danger">credit_card</span>
+</div>
+<div class="flex items-center space-x-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-danger/10 flex items-center justify-center text-danger">
+<span class="material-icons-round">arrow_upward</span>
+</div>
+<span class="text-sm font-semibold text-slate-500 dark:text-slate-400">Total Spent</span>
+</div>
+<div class="flex items-end justify-between">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">$850.50</h3>
+</div>
+<div class="mt-2 text-xs font-medium text-danger flex items-center">
+<span class="material-icons-round text-sm mr-1">trending_up</span>
+                    +5% vs last month
+                </div>
+</div>
+<!-- Savings Card -->
+<div class="bg-primary p-5 rounded-xl shadow-lg shadow-primary/20 relative overflow-hidden group hover:shadow-primary/30 transition-all text-white">
+<div class="absolute right-0 top-0 p-4 opacity-20">
+<span class="material-icons-round text-6xl text-white">savings</span>
+</div>
+<div class="flex items-center space-x-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white backdrop-blur-sm">
+<span class="material-icons-round">savings</span>
+</div>
+<span class="text-sm font-semibold text-blue-100">Total Savings</span>
+</div>
+<div class="flex items-end justify-between relative z-10">
+<h3 class="text-2xl font-bold text-white">$349.50</h3>
+</div>
+<div class="mt-2 text-xs font-medium text-blue-100 flex items-center">
+<span class="material-icons-round text-sm mr-1">check_circle</span>
+                    On track
+                </div>
+</div>
+</section>
+<!-- Budget vs Expenditure Chart Section -->
+<section class="bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 p-6 mb-8">
+<div class="flex flex-row justify-between items-center mb-6">
+<div>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Budget vs Spent</h2>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Daily comparison for this week</p>
+</div>
+<!-- Legend -->
+<div class="flex space-x-4">
+<div class="flex items-center space-x-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Budget</span>
+</div>
+<div class="flex items-center space-x-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-danger"></div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Spent</span>
+</div>
+</div>
+</div>
+<!-- Bar Chart Container -->
+<div class="h-64 w-full flex items-end justify-between gap-2 sm:gap-4 relative">
+<!-- Y-Axis Grid Lines (Abstract) -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="w-full h-px bg-slate-100 dark:bg-slate-800 border-dashed"></div>
+<div class="w-full h-px bg-slate-100 dark:bg-slate-800 border-dashed"></div>
+<div class="w-full h-px bg-slate-100 dark:bg-slate-800 border-dashed"></div>
+<div class="w-full h-px bg-slate-100 dark:bg-slate-800 border-dashed"></div>
+<div class="w-full h-px bg-slate-200 dark:bg-slate-700"></div> <!-- Baseline -->
+</div>
+<!-- Day 1: Mon -->
+<div class="flex flex-col items-center gap-2 flex-1 relative group cursor-pointer z-10">
+<div class="flex items-end gap-1 h-full w-full justify-center">
+<div class="w-2 sm:w-3 bg-primary/20 dark:bg-primary/30 rounded-t-sm h-[60%] relative group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[80%]"></div>
+</div> <!-- Budget -->
+<div class="w-2 sm:w-3 bg-danger/20 dark:bg-danger/30 rounded-t-sm h-[40%] relative group-hover:bg-danger/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-danger rounded-t-sm h-[60%]"></div>
+</div> <!-- Spent -->
+</div>
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Mon</span>
+</div>
+<!-- Day 2: Tue -->
+<div class="flex flex-col items-center gap-2 flex-1 relative group cursor-pointer z-10">
+<div class="flex items-end gap-1 h-full w-full justify-center">
+<div class="w-2 sm:w-3 bg-primary/20 dark:bg-primary/30 rounded-t-sm h-[50%] relative group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[100%]"></div>
+</div>
+<div class="w-2 sm:w-3 bg-danger/20 dark:bg-danger/30 rounded-t-sm h-[75%] relative group-hover:bg-danger/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-danger rounded-t-sm h-[90%]"></div>
+</div>
+</div>
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Tue</span>
+</div>
+<!-- Day 3: Wed -->
+<div class="flex flex-col items-center gap-2 flex-1 relative group cursor-pointer z-10">
+<div class="flex items-end gap-1 h-full w-full justify-center">
+<div class="w-2 sm:w-3 bg-primary/20 dark:bg-primary/30 rounded-t-sm h-[65%] relative group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[100%]"></div>
+</div>
+<div class="w-2 sm:w-3 bg-danger/20 dark:bg-danger/30 rounded-t-sm h-[30%] relative group-hover:bg-danger/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-danger rounded-t-sm h-[100%]"></div>
+</div>
+</div>
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Wed</span>
+</div>
+<!-- Day 4: Thu -->
+<div class="flex flex-col items-center gap-2 flex-1 relative group cursor-pointer z-10">
+<div class="flex items-end gap-1 h-full w-full justify-center">
+<div class="w-2 sm:w-3 bg-primary/20 dark:bg-primary/30 rounded-t-sm h-[80%] relative group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[90%]"></div>
+</div>
+<div class="w-2 sm:w-3 bg-danger/20 dark:bg-danger/30 rounded-t-sm h-[45%] relative group-hover:bg-danger/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-danger rounded-t-sm h-[100%]"></div>
+</div>
+</div>
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Thu</span>
+</div>
+<!-- Day 5: Fri -->
+<div class="flex flex-col items-center gap-2 flex-1 relative group cursor-pointer z-10">
+<div class="flex items-end gap-1 h-full w-full justify-center">
+<div class="w-2 sm:w-3 bg-primary/20 dark:bg-primary/30 rounded-t-sm h-[90%] relative group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[100%]"></div>
+</div>
+<div class="w-2 sm:w-3 bg-danger/20 dark:bg-danger/30 rounded-t-sm h-[85%] relative group-hover:bg-danger/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-danger rounded-t-sm h-[100%]"></div>
+</div>
+</div>
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Fri</span>
+</div>
+<!-- Day 6: Sat -->
+<div class="flex flex-col items-center gap-2 flex-1 relative group cursor-pointer z-10">
+<div class="flex items-end gap-1 h-full w-full justify-center">
+<div class="w-2 sm:w-3 bg-primary/20 dark:bg-primary/30 rounded-t-sm h-[40%] relative group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[100%]"></div>
+</div>
+<div class="w-2 sm:w-3 bg-danger/20 dark:bg-danger/30 rounded-t-sm h-[20%] relative group-hover:bg-danger/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-danger rounded-t-sm h-[100%]"></div>
+</div>
+</div>
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Sat</span>
+</div>
+<!-- Day 7: Sun -->
+<div class="flex flex-col items-center gap-2 flex-1 relative group cursor-pointer z-10">
+<div class="flex items-end gap-1 h-full w-full justify-center">
+<div class="w-2 sm:w-3 bg-primary/20 dark:bg-primary/30 rounded-t-sm h-[35%] relative group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[100%]"></div>
+</div>
+<div class="w-2 sm:w-3 bg-danger/20 dark:bg-danger/30 rounded-t-sm h-[15%] relative group-hover:bg-danger/40 transition-colors">
+<div class="absolute bottom-0 w-full bg-danger rounded-t-sm h-[100%]"></div>
+</div>
+</div>
+<span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Sun</span>
+</div>
+</div>
+</section>
+<!-- Recent Transactions Preview -->
+<section class="mb-6">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Recent Transactions</h2>
+<button class="text-sm font-semibold text-primary hover:text-blue-600 transition-colors">See All</button>
+</div>
+<div class="space-y-3">
+<!-- Transaction Item 1 -->
+<div class="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-icons-round text-lg">school</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">Textbooks</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Education • Today</p>
+</div>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">-$125.00</span>
+</div>
+<!-- Transaction Item 2 -->
+<div class="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center">
+<span class="material-icons-round text-lg">fastfood</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">Campus Café</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Food • Yesterday</p>
+</div>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">-$12.50</span>
+</div>
+<!-- Transaction Item 3 -->
+<div class="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+<span class="material-icons-round text-lg">work</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">Freelance Payment</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Income • Yesterday</p>
+</div>
+</div>
+<span class="text-sm font-bold text-success">+$250.00</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-5 w-14 h-14 bg-primary text-white rounded-full shadow-xl shadow-primary/40 flex items-center justify-center z-50 hover:scale-105 active:scale-95 transition-all">
+<span class="material-icons-round text-3xl">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-700 pb-6 pt-3 px-6 z-40">
+<div class="flex justify-around items-center">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center space-y-1 group">
+<div class="w-10 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-icons-round text-primary text-xl">dashboard</span>
+</div>
+<span class="text-[10px] font-bold text-primary">Home</span>
+</button>
+<!-- Analytics -->
+<button class="flex flex-col items-center space-y-1 group">
+<div class="w-10 h-8 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center justify-center transition-colors">
+<span class="material-icons-round text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300 text-xl">pie_chart</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300">Analytics</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center space-y-1 group">
+<div class="w-10 h-8 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center justify-center transition-colors">
+<span class="material-icons-round text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300 text-xl">person</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

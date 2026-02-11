@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transaction History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100 min-h-screen flex justify-center">
+<!-- Mobile Container -->
+<div class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative overflow-hidden shadow-2xl">
+<!-- Status Bar Area (Mock) -->
+<div class="h-12 w-full flex items-end justify-between px-6 pb-2 select-none z-20">
+<span class="text-xs font-bold">9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-icons-round text-xs">signal_cellular_alt</span>
+<span class="material-icons-round text-xs">wifi</span>
+<span class="material-icons-round text-lg -rotate-90">battery_full</span>
+</div>
+</div>
+<!-- iOS Style Navigation Bar -->
+<header class="sticky top-0 z-10 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-5 py-4 transition-colors duration-300">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">History</h1>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Your recent spending</p>
+</div>
+<button class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-icons-round text-slate-600 dark:text-slate-300">filter_list</span>
+</button>
+</div>
+</header>
+<!-- Main Content: Transaction List -->
+<main class="flex-1 overflow-y-auto px-4 py-6 space-y-4 pb-24 scroll-smooth">
+<!-- Date Header -->
+<div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-2 pt-2">Today</div>
+<!-- Card 1 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 flex items-center justify-between transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4 flex-1">
+<!-- Avatar with Amount -->
+<div class="h-14 w-14 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center shrink-0 border border-primary/10">
+<span class="text-primary dark:text-primary font-bold text-sm">₹150</span>
+</div>
+<!-- Text Info -->
+<div class="flex flex-col">
+<h3 class="font-bold text-slate-900 dark:text-white text-base">Canteen</h3>
+<span class="text-xs font-medium text-slate-400">Jan 10, 2024 • 12:30 PM</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-1 pl-2">
+<button aria-label="Edit" class="p-2 rounded-full text-primary hover:bg-primary/10 transition-colors">
+<span class="material-icons-round text-xl">edit</span>
+</button>
+<button aria-label="Delete" class="p-2 rounded-full text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+<span class="material-icons-round text-xl">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 flex items-center justify-between transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4 flex-1">
+<!-- Avatar with Amount -->
+<div class="h-14 w-14 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center shrink-0 border border-orange-100 dark:border-orange-800/30">
+<span class="text-orange-600 dark:text-orange-400 font-bold text-sm">₹40</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-bold text-slate-900 dark:text-white text-base">Stationery</h3>
+<span class="text-xs font-medium text-slate-400">Jan 10, 2024 • 10:15 AM</span>
+</div>
+</div>
+<div class="flex items-center gap-1 pl-2">
+<button aria-label="Edit" class="p-2 rounded-full text-primary hover:bg-primary/10 transition-colors">
+<span class="material-icons-round text-xl">edit</span>
+</button>
+<button aria-label="Delete" class="p-2 rounded-full text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+<span class="material-icons-round text-xl">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Date Header -->
+<div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-2 pt-4">Yesterday</div>
+<!-- Card 3 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 flex items-center justify-between transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4 flex-1">
+<!-- Avatar with Amount -->
+<div class="h-14 w-14 rounded-full bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center shrink-0 border border-purple-100 dark:border-purple-800/30">
+<span class="text-purple-600 dark:text-purple-400 font-bold text-sm">₹500</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-bold text-slate-900 dark:text-white text-base">Course Books</h3>
+<span class="text-xs font-medium text-slate-400">Jan 9, 2024 • 4:45 PM</span>
+</div>
+</div>
+<div class="flex items-center gap-1 pl-2">
+<button aria-label="Edit" class="p-2 rounded-full text-primary hover:bg-primary/10 transition-colors">
+<span class="material-icons-round text-xl">edit</span>
+</button>
+<button aria-label="Delete" class="p-2 rounded-full text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+<span class="material-icons-round text-xl">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 flex items-center justify-between transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4 flex-1">
+<!-- Avatar with Amount -->
+<div class="h-14 w-14 rounded-full bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center shrink-0 border border-emerald-100 dark:border-emerald-800/30">
+<span class="text-emerald-600 dark:text-emerald-400 font-bold text-sm">₹20</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-bold text-slate-900 dark:text-white text-base">Printouts</h3>
+<span class="text-xs font-medium text-slate-400">Jan 9, 2024 • 2:20 PM</span>
+</div>
+</div>
+<div class="flex items-center gap-1 pl-2">
+<button aria-label="Edit" class="p-2 rounded-full text-primary hover:bg-primary/10 transition-colors">
+<span class="material-icons-round text-xl">edit</span>
+</button>
+<button aria-label="Delete" class="p-2 rounded-full text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+<span class="material-icons-round text-xl">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Date Header -->
+<div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-2 pt-4">Earlier</div>
+<!-- Card 5 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 flex items-center justify-between transition-all active:scale-[0.98]">
+<div class="flex items-center gap-4 flex-1">
+<!-- Avatar with Amount -->
+<div class="h-14 w-14 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center shrink-0 border border-blue-100 dark:border-blue-800/30">
+<span class="text-blue-600 dark:text-blue-400 font-bold text-sm">₹1200</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-bold text-slate-900 dark:text-white text-base">Bus Pass</h3>
+<span class="text-xs font-medium text-slate-400">Jan 5, 2024 • 9:00 AM</span>
+</div>
+</div>
+<div class="flex items-center gap-1 pl-2">
+<button aria-label="Edit" class="p-2 rounded-full text-primary hover:bg-primary/10 transition-colors">
+<span class="material-icons-round text-xl">edit</span>
+</button>
+<button aria-label="Delete" class="p-2 rounded-full text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+<span class="material-icons-round text-xl">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 flex items-center justify-between transition-all active:scale-[0.98] opacity-60">
+<div class="flex items-center gap-4 flex-1">
+<!-- Avatar with Amount -->
+<div class="h-14 w-14 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700">
+<span class="text-slate-500 dark:text-slate-400 font-bold text-sm">₹80</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-bold text-slate-900 dark:text-white text-base">Snacks</h3>
+<span class="text-xs font-medium text-slate-400">Jan 2, 2024 • 5:30 PM</span>
+</div>
+</div>
+<div class="flex items-center gap-1 pl-2">
+<button aria-label="Edit" class="p-2 rounded-full text-primary hover:bg-primary/10 transition-colors">
+<span class="material-icons-round text-xl">edit</span>
+</button>
+<button aria-label="Delete" class="p-2 rounded-full text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+<span class="material-icons-round text-xl">delete_outline</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="absolute bottom-6 right-6 z-30">
+<button class="h-14 w-14 rounded-full bg-primary hover:bg-blue-600 shadow-lg shadow-blue-500/30 flex items-center justify-center transition-transform hover:scale-105 active:scale-95 text-white">
+<span class="material-icons-round text-3xl">add</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar (Optional Context) -->
+<div class="h-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex justify-around items-center px-6 pb-4">
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500">
+<span class="material-icons-round text-2xl">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary dark:text-primary">
+<span class="material-icons-round text-2xl">history</span>
+<span class="text-[10px] font-medium">History</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500">
+<span class="material-icons-round text-2xl">pie_chart</span>
+<span class="text-[10px] font-medium">Stats</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500">
+<span class="material-icons-round text-2xl">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</div>
+</body></html>

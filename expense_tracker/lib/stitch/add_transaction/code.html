@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Transaction - Finance App</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem", 
+                        "xl": "1.5rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100 antialiased min-h-screen flex flex-col items-center justify-center">
+<!-- Mobile Wrapper -->
+<div class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen relative shadow-2xl overflow-hidden flex flex-col">
+<!-- Header -->
+<header class="pt-12 pb-4 px-6 flex items-center justify-between sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
+<button class="p-2 -ml-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300">
+<span class="material-icons-round text-2xl">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold">Add Transaction</h1>
+<button class="p-2 -mr-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300">
+<span class="material-icons-round text-2xl">more_horiz</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-6 pb-24 overflow-y-auto no-scrollbar">
+<!-- Type Toggle -->
+<div class="bg-white dark:bg-slate-800 p-1.5 rounded-xl flex gap-2 mb-8 shadow-sm">
+<button class="flex-1 py-3 rounded-lg text-sm font-semibold text-white bg-primary shadow-md transition-all">
+                    Expense
+                </button>
+<button class="flex-1 py-3 rounded-lg text-sm font-semibold text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+                    Income
+                </button>
+</div>
+<!-- Amount Input Card -->
+<div class="mb-8 text-center">
+<label class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2 block uppercase tracking-wider">Amount</label>
+<div class="relative inline-flex items-center justify-center">
+<span class="text-4xl font-bold text-slate-400 dark:text-slate-500 mr-2">₹</span>
+<input autofocus="" class="bg-transparent border-none text-6xl font-extrabold text-slate-900 dark:text-white text-center w-full focus:ring-0 p-0 placeholder-slate-300 dark:placeholder-slate-700 caret-primary" inputmode="decimal" placeholder="0" type="text"/>
+</div>
+</div>
+<!-- Details Form Card -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm space-y-6">
+<!-- Category Dropdown -->
+<div class="relative">
+<label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Category</label>
+<button class="w-full flex items-center justify-between bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-4 hover:border-primary focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all group text-left">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-icons-round">fastfood</span>
+</div>
+<span class="font-semibold text-slate-700 dark:text-slate-200 group-hover:text-primary transition-colors">Food &amp; Dining</span>
+</div>
+<span class="material-icons-round text-slate-400">expand_more</span>
+</button>
+</div>
+<!-- Date Picker -->
+<div>
+<label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Date</label>
+<div class="flex items-center justify-between bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-slate-800 dark:text-white">Today</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Oct 24, 2023</span>
+</div>
+<button class="text-primary hover:bg-primary/10 px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1">
+<span class="material-icons-round text-lg">calendar_today</span>
+                            Choose
+                        </button>
+</div>
+</div>
+<!-- Note Input -->
+<div>
+<label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Note</label>
+<div class="relative">
+<span class="absolute top-4 left-4 text-slate-400 material-icons-round">edit_note</span>
+<textarea class="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl pl-12 pr-4 py-4 text-slate-700 dark:text-slate-200 placeholder-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none" placeholder="Add a note (optional)" rows="3"></textarea>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button Area -->
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pt-12">
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center gap-2 transform active:scale-[0.98] transition-all">
+<span class="material-icons-round">check</span>
+                Add Transaction
+            </button>
+</div>
+</div>
+</body></html>
