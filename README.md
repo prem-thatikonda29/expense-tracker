@@ -2,15 +2,6 @@
 
 A full-stack personal expense tracking application with a Flutter mobile frontend and a Node.js REST API backend. Users can track income and expenses, set monthly and category-specific budgets, and visualize spending through interactive charts.
 
-**Group 1**
-
-| Roll No | Name               |
-| ------- | ------------------ |
-| 06      | Prem Thatikonda    |
-| 14      | Karunesh Chikne    |
-| 31      | Atharav Patil      |
-| 42      | Muhammed Faheem    |
-
 ---
 
 ## Tech Stack
